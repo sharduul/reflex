@@ -1,0 +1,120 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #eff0f0;
+}
+header {
+  background-color: #2d4d6d
+}
+nav {
+  width: 1024px;
+  margin: 0 auto;
+}
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list-item {
+  color: white;
+  display: inline-block;
+  padding: 25px;
+}
+
+.search {
+  background-color: #1d324a;
+}
+
+.notifications {
+  padding: inherit;
+}
+
+.clinician-name {
+  margin-right: 10px
+}
+
+/* utility classes*/
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+
+
+
+
+/* custom CSS */
+
+@headers: #2d4d6d;
+@links: #1fb0f8;
+@message: #97a8bc;
+@troubleNotifs: #ffb003;
+@painNotifs: #fd571d;
+@date: #d0d2d2;
+@containerBackground: #eff0f0;
+
+.notif-item{
+  background-color: white;
+  width: 350px;
+  position: relative;
+  padding: 10px;
+  margin-top: 10px;
+  height: 60px;
+
+  >i{
+    float: left;
+    font-size: 36px;
+  }
+
+  >div{
+    float: left;
+    margin-left: 10px
+  }
+
+  .message{
+    color: @message;
+    font-size: 14px;
+  }
+
+  .fa-pencil-square-o, .assessment_needs_review{
+    color: @links;
+  }
+
+  .fa-exclamation-triangle, .event_pain{
+    color: @painNotifs;
+  }
+
+  .fa-info-circle, .exercise_trouble{
+    color: @troubleNotifs;
+  }
+
+  .timestamp{
+    color: @date;
+    font-size: 11px;
+    margin-top: 10px;
+  }
+}
+
+.notif-container{
+  position: absolute;
+  background-color: @containerBackground;
+  left: 50%;
+  padding: 0px;
+  margin: 0px;
+  width: 400px;
+  height: 500px;
+  overflow: auto;
+}

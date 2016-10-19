@@ -1,48 +1,41 @@
 body {
-  padding: 0;
-  margin: 0;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  background-color: #eff0f0;
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    background-color: #eff0f0;
 }
 header {
-  background-color: #2d4d6d
+    background-color: #2d4d6d;
 }
 nav {
-  width: 1024px;
-  margin: 0 auto;
+    width: 1024px;
+    margin: 0 auto;
 }
 .nav-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
-
 .nav-list-item {
-  color: white;
-  display: inline-block;
-  padding: 25px;
+    color: white;
+    display: inline-block;
+    padding: 25px;
 }
-
 .search {
-  background-color: #1d324a;
+    background-color: #1d324a;
 }
-
 .notifications {
-  padding: inherit;
+    padding: inherit;
 }
-
 .clinician-name {
-  margin-right: 10px
+    margin-right: 10px;
 }
-
 /* utility classes*/
-
 .right {
-  float: right;
+    float: right;
 }
-
 .left {
-  float: left;
+    float: left;
 }
 .group:before,
 .group:after {
@@ -51,4 +44,52 @@ nav {
 }
 .group:after {
     clear: both;
+}
+/* custom CSS */
+.notif-item {
+    background-color: white;
+    width: 350px;
+    position: relative;
+    padding: 10px;
+    margin-top: 10px;
+    height: 60px;
+}
+.notif-item > i {
+    float: left;
+    font-size: 36px;
+}
+.notif-item > div {
+    float: left;
+    margin-left: 10px;
+}
+.notif-item .message {
+    color: #97a8bc;
+    font-size: 14px;
+}
+.notif-item .fa-pencil-square-o,
+.notif-item .assessment_needs_review {
+    color: #1fb0f8;
+}
+.notif-item .fa-exclamation-triangle,
+.notif-item .event_pain {
+    color: #fd571d;
+}
+.notif-item .fa-info-circle,
+.notif-item .exercise_trouble {
+    color: #ffb003;
+}
+.notif-item .timestamp {
+    color: #d0d2d2;
+    font-size: 11px;
+    margin-top: 10px;
+}
+.notif-container {
+    position: absolute;
+    background-color: #eff0f0;
+    left: 50%;
+    padding: 0px;
+    margin: 0px;
+    width: 400px;
+    height: 500px;
+    overflow: auto;
 }

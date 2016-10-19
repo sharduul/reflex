@@ -74,7 +74,8 @@
                         var notifObject = {
                             patient_name: groupedPainNotifs[key][0].patient_name,
                             message: "Reported pain " + groupedPainNotifs[key].length + " times with highest pain" + maxPainLevel,
-                            timestamp: maxTimestamp
+                            timestamp: maxTimestamp,
+                            type: "event_pain"
                         };
 
                         scope.notifications.push(notifObject);
@@ -98,7 +99,8 @@
                         var notifObject = {
                             patient_name: groupedReview[key][0].patient_name,
                             message: "Has " + groupedReview[key].length + " assessments ready to review",
-                            timestamp: maxTimestamp
+                            timestamp: maxTimestamp,
+                            type: "assessment_needs_review"
                         };
 
                         scope.notifications.push(notifObject);

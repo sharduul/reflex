@@ -1,6 +1,13 @@
-<div ng-repeat="(key, value) in notifications">
-    <div class = "name">{{ value.patient_name }}</div>
-    <div class = "message">{{ value.message }}</div>
-    <div class = "message">{{ value.timestamp | date:'medium' }}</div>
-    <!--<div class = "time">{{ moment().format("DD/MM/YYYY") }}</div>-->
+<div class="notif-item" ng-repeat="(key, value) in notifications">
+    <i class="fa"
+       ng-class="{
+            'fa-info-circle':  value.type == 'exercise_trouble',
+            'fa-exclamation-triangle':  value.type == 'event_pain',
+            'fa-pencil-square-o':  value.type == 'assessment_needs_review'
+       }" aria-hidden="true"></i>
+    <div>
+        <div ng-class="value.type">{{ value.patient_name }}</div>
+        <div class="message">{{ value.message }}</div>
+        <div class="timestamp">{{ value.timestamp | date:'medium' }}</div>
+    </div>
 </div>
