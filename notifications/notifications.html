@@ -1,5 +1,6 @@
-<div ng-repeat="(key, value) in data">
-    <div class = "name">{{ vm.notificationList.patient_name }}</div>
-    <div class = "message"> Has {{notification.timestamp.length}} assessments ready to review.</div>
-    <!--<div class = "time">{{ notification.timestamp[0] | amDateFormat: 'MMMM D [at] hh:mmA' }}</div>-->
+<div ng-repeat="(key, value) in notifications">
+    <div class = "name">{{ value.patient_name }}</div>
+    <div class = "message">{{ value.message }}</div>
+    <div class = "message">{{ value.timestamp | date:'medium' }}</div>
+    <!--<div class = "time">{{ moment().format("DD/MM/YYYY") }}</div>-->
 </div>
