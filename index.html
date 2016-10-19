@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Reflexion Health</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css"/>
+  </head>
+  <body ng-app='notif-app'>
+    <header>
+      <nav class="group">
+        <ul class="nav-list left">
+          <li class="nav-list-item search">
+            <i class="fa fa-search"></i>
+          </li>
+          <li class="nav-list-item">
+            <span>Patients</span>
+          </li>
+          <li class="nav-list-item">
+            <span>Protocols</span>
+          </li>
+          <li class="nav-list-item">
+            <span>Clinicians</span>
+          </li>
+        </ul>
+        <ul class="nav-list right">
+          <li class="nav-list-item notifications">
+            <i class="fa fa-bell-o" ng-click="showNotif = !showNotif"></i>
+          </li>
+          <li class="nav-list-item">
+            <span class="clinician-name">John Doe</span><i class="fa fa-chevron-down"></i>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <notifs ></notifs>
+
+
+    <!-- this will load the main view -->
+    <!--<div ui-view></div>-->
+
+    <!-- Placed Javascript at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.2/angular-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.min.js"></script>
+
+    <!-- app's custom js  -->
+    <script src="app.js"></script>
+    <script src="notifications/notificationsDirective.js"></script>
+    <script src="notifications/notificationsResource.js"></script>
+
+  </body>
+</html>

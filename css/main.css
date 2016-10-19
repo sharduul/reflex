@@ -1,0 +1,54 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #eff0f0;
+}
+header {
+  background-color: #2d4d6d
+}
+nav {
+  width: 1024px;
+  margin: 0 auto;
+}
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list-item {
+  color: white;
+  display: inline-block;
+  padding: 25px;
+}
+
+.search {
+  background-color: #1d324a;
+}
+
+.notifications {
+  padding: inherit;
+}
+
+.clinician-name {
+  margin-right: 10px
+}
+
+/* utility classes*/
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+}
+.group:after {
+    clear: both;
+}
