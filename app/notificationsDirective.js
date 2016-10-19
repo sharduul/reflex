@@ -22,6 +22,7 @@
 
                 scope.notifications = [];
                 scope.clearNotifById = clearNotifById;
+                scope.clearAllNotifs = clearAllNotifs;
 
                 (function(){
 
@@ -139,6 +140,11 @@
 
                     // this is done so that the notification alert (red dot) can be removed if all the notifications are dismissed
                     // we wouldn't need this in real world application based on how we implement it.
+                    $rootScope.$broadcast('notif-dismissed', { notifications: scope.notifications });
+                }
+
+                function clearAllNotifs(){
+                    scope.notifications = [];
                     $rootScope.$broadcast('notif-dismissed', { notifications: scope.notifications });
                 }
 

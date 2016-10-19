@@ -5,12 +5,16 @@
 		.module('notifications-controllers', [])
 		.controller('notificationsAppController', NotificationsAppController);
 
-    NotificationsAppController.$inject = ['$scope'];
+    NotificationsAppController.$inject = ['$scope', 'notificationsResource'];
 
-	function NotificationsAppController($scope){
+	function NotificationsAppController($scope, notificationsResource){
 
 		(function(){
 
+            // get all the notifications here
+            notificationsResource.notification().get(function(data){
+                $scope.notifications = data;
+            });
 
         })();
 

@@ -48,7 +48,6 @@ nav {
 /* custom CSS */
 .notif-item {
     background-color: white;
-    width: 350px;
     position: relative;
     padding: 10px;
     margin-top: 10px;
@@ -87,15 +86,19 @@ nav {
     font-size: 11px;
     margin-top: 10px;
 }
+.notif-item .clear-all {
+    float: right;
+}
 .notif-container {
     position: absolute;
     background-color: #eff0f0;
     left: 50%;
-    padding: 0px;
+    padding: 10px;
     margin: 0px;
     width: 400px;
-    height: 500px;
+    max-height: 500px;
     overflow: auto;
+    border: 1px solid lightgray;
 }
 .notif-alert {
     width: 8px;
@@ -104,4 +107,8 @@ nav {
     background-color: red;
     bottom: 70%;
     left: 30%;
+}
+
+.clear-all{
+    float: right;
 }
