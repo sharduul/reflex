@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css"/>
   </head>
-  <body ng-app='notif-app'>
+  <body ng-app='notif-app' ng-controller="notificationsAppController">
     <header>
       <nav class="group">
         <ul class="nav-list left">
@@ -24,7 +24,7 @@
         </ul>
         <ul class="nav-list right">
           <li class="nav-list-item notifications">
-            <i class="fa fa-bell-o" ng-click="showNotif = !showNotif"></i>
+            <i class="fa fa-bell-o" ng-class="{ 'notif-alert': notifications.length > 0 }" ng-click="showNotif = !showNotif"></i>
           </li>
           <li class="nav-list-item">
             <span class="clinician-name">John Doe</span><i class="fa fa-chevron-down"></i>
@@ -49,8 +49,9 @@
 
     <!-- app's custom js  -->
     <script src="app.js"></script>
-    <script src="notifications/notificationsDirective.js"></script>
-    <script src="notifications/notificationsResource.js"></script>
+    <script src="app/notificationsDirective.js"></script>
+    <script src="app/notificationsResource.js"></script>
+    <script src="app/notificationsAppController.js"></script>
 
   </body>
 </html>

@@ -54,7 +54,11 @@ nav {
     margin-top: 10px;
     height: 60px;
 }
-.notif-item > i {
+.notif-item > .notif-clear {
+    float: right;
+    color: #97a8bc;
+}
+.notif-item > .notif-icon {
     float: left;
     font-size: 36px;
 }
@@ -92,4 +96,12 @@ nav {
     width: 400px;
     height: 500px;
     overflow: auto;
+}
+.notif-alert {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: red;
+    bottom: 70%;
+    left: 30%;
 }

@@ -1,5 +1,5 @@
 <div class="notif-item" ng-repeat="(key, value) in notifications">
-    <i class="fa"
+    <i class="fa notif-icon"
        ng-class="{
             'fa-info-circle':  value.type == 'exercise_trouble',
             'fa-exclamation-triangle':  value.type == 'event_pain',
@@ -10,4 +10,5 @@
         <div class="message">{{ value.message }}</div>
         <div class="timestamp">{{ value.timestamp | date:'medium' }}</div>
     </div>
+    <i class="fa fa-times notif-clear" aria-hidden="true" ng-click="clearNotifById(value.id)"></i>
 </div>

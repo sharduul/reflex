@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('notif-app', ['ui.router', 'ngResource', 'notifications-directives', 'notifications-services'])
+        .module('notif-app', ['ui.router', 'ngResource', 'notifications-controllers', 'notifications-directives', 'notifications-services'])
         .config(Config)
         .run(Run);
 
