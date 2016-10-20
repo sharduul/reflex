@@ -11,14 +11,11 @@
 
 		(function(){
 
-            // get all the notifications here
-            notificationsResource.notification().get(function(data){
-                $scope.notifications = data;
-            });
 
         })();
 
-        $scope.$on('notif-dismissed', function(event, args) {
+        // listen to notifications being modified
+        $scope.$on('notif-changed', function(event, args) {
             $scope.notifications = args.notifications;
         });
 

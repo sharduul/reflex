@@ -15,11 +15,11 @@
             link: function (scope, element, attrs) {
 
                 // declare private variables here
-                var vm = this;
                 var allNotifs = [];
                 var groupedPainNotifs = {};
                 var groupedReview = {};
 
+                // all the scope variables and functions
                 scope.notifications = [];
                 scope.clearNotifById = clearNotifById;
                 scope.clearAllNotifs = clearAllNotifs;
@@ -42,7 +42,8 @@
                             return new Date(b.timestamp) - new Date(a.timestamp);
                         });
 
-                        $rootScope.$broadcast('notif-dismissed', { notifications: scope.notifications });
+                        // this broadcast is to show the red dot alert
+                        $rootScope.$broadcast('notif-changed', { notifications: scope.notifications });
 
                     });
 
@@ -64,7 +65,6 @@
                             return result.id;
                         });
 
-
                         var notifObject = {
                             patient_name: groupedPainNotifs[key][0].patient_name,
                             message: "Reported pain " + groupedPainNotifs[key].length + " times with highest pain" + maxPainLevel,
@@ -78,6 +78,7 @@
 
                 }
 
+
                 function groupAssessmentReviews(){
                     var allReviews = _.filter(allNotifs, function(notification){
                         return notification.type.toLowerCase() == "assessment_needs_review";
@@ -90,7 +91,6 @@
 
                         // need  these ids for dismissing all notifs in group
                         var idArray = _.map(groupedReview[key], function(result){
-                                //return _.pick(result, 'id');
                                 return result.id;
                         });
 
@@ -107,6 +107,7 @@
 
                 }
 
+                // get the max timestamp from the grouped notifications
                 function getMaxTimestampFromArray(array){
 
                     if(array.length == 0){
@@ -128,24 +129,19 @@
                 function clearNotifById(id){
                     // API call will be made to dismiss the notification by id
                     scope.notifications = _.filter(scope.notifications, function(notif){
-
-                        //console.log(notif.id == id);
-
-                        //if(Array.isArray(notif.id) && !_.includes(notif.id, id)){
-                        //    return false;
-                        //}
-
                         return notif.id != id;
                     });
 
                     // this is done so that the notification alert (red dot) can be removed if all the notifications are dismissed
                     // we wouldn't need this in real world application based on how we implement it.
-                    $rootScope.$broadcast('notif-dismissed', { notifications: scope.notifications });
+                    $rootScope.$broadcast('notif-changed', { notifications: scope.notifications });
                 }
 
                 function clearAllNotifs(){
+                    // all notifications are dismissed
+                    // in real world application and API call will be made here
                     scope.notifications = [];
-                    $rootScope.$broadcast('notif-dismissed', { notifications: scope.notifications });
+                    $rootScope.$broadcast('notif-changed', { notifications: scope.notifications });
                 }
 
             }

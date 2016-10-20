@@ -16,3 +16,6 @@
     </div>
     <i class="fa fa-times notif-clear" aria-hidden="true" ng-click="clearNotifById(value.id)"></i>
 </div>
+<div class="notif-item" ng-if="notifications.length == 0">
+    <div class="message">Yay! you are caught up.</div>
+</div>
