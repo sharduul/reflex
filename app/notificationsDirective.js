@@ -23,6 +23,7 @@
                 scope.notifications = [];
                 scope.clearNotifById = clearNotifById;
                 scope.clearAllNotifs = clearAllNotifs;
+                scope.summary = summary;
 
                 (function(){
 
@@ -123,6 +124,10 @@
                     });
 
                     return array[0].timestamp;
+                }
+
+                function summary(name){
+                    alert("summary of " + name);
                 }
 
 

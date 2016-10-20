@@ -3,14 +3,14 @@
     <a class="clear-all" href ng-click="clearAllNotifs()">Clear all</a>
 </div>
 <div class="notif-item" ng-repeat="(key, value) in notifications">
-    <i class="fa notif-icon"
+    <i class="fa notif-icon" ui-sref="notificationsCenter"
        ng-class="{
             'fa-info-circle':  value.type == 'exercise_trouble',
             'fa-exclamation-triangle':  value.type == 'event_pain',
             'fa-pencil-square-o':  value.type == 'assessment_needs_review'
        }" aria-hidden="true"></i>
     <div>
-        <div ng-class="value.type">{{ value.patient_name }}</div>
+        <a href ng-class="value.type" ng-click="summary(value.patient_name)">{{ value.patient_name }}</a>
         <div class="message">{{ value.message }}</div>
         <div class="timestamp">{{ value.timestamp | date:'medium' }}</div>
     </div>

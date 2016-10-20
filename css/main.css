@@ -99,6 +99,7 @@ nav {
     max-height: 500px;
     overflow: auto;
     border: 1px solid lightgray;
+    z-index: 1000;
 }
 .notif-alert {
     width: 8px;
@@ -111,4 +112,8 @@ nav {
 
 .clear-all{
     float: right;
+}
+
+.notif-center-container{
+    padding: 10px;
 }

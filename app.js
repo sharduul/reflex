@@ -20,9 +20,9 @@
     function Config($stateProvider, $urlRouterProvider){
 
         $stateProvider
-            .state('space', {
-                url: "/",
-                templateUrl: "notifications/notificationsCenter.html"
+            .state('notificationsCenter', {
+                url: "/notificationsCenter",
+                templateUrl: "templates/notificationsCenter.html"
             });
 
         // if none of the above states are matched, use this as the fallback
