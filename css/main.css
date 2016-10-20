@@ -86,7 +86,7 @@ nav {
     font-size: 11px;
     margin-top: 10px;
 }
-.notif-item .clear-all {
+.clear-all {
     float: right;
 }
 .notif-container {
@@ -109,11 +109,9 @@ nav {
     bottom: 70%;
     left: 30%;
 }
-
-.clear-all{
-    float: right;
-}
-
-.notif-center-container{
+.notif-center-container {
     padding: 10px;
+}
+.header {
+    color: #2d4d6d;
 }

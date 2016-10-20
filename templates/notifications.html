@@ -1,6 +1,6 @@
 <div>
-    <label>Notifications</label>
-    <a class="clear-all" href ng-click="clearAllNotifs()">Clear all</a>
+    <label class="header">Notifications</label>
+    <a class="clear-all" href  ng-if="!readOnly" ng-click="clearAllNotifs()">Clear all</a>
 </div>
 <div class="notif-item" ng-repeat="(key, value) in notifications">
     <i class="fa notif-icon" ui-sref="notificationsCenter"
@@ -14,7 +14,7 @@
         <div class="message">{{ value.message }}</div>
         <div class="timestamp">{{ value.timestamp | date:'medium' }}</div>
     </div>
-    <i class="fa fa-times notif-clear" aria-hidden="true" ng-click="clearNotifById(value.id)"></i>
+    <i ng-if="!readOnly" class="fa fa-times notif-clear" aria-hidden="true" ng-click="clearNotifById(value.id)"></i>
 </div>
 <div class="notif-item" ng-if="notifications.length == 0">
     <div class="message">Yay! you are caught up.</div>

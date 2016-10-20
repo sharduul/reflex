@@ -12,7 +12,12 @@
         return {
             restrict: 'E',
             templateUrl: 'templates/notifications.html',
+            scope: {
+                readOnly: '='
+            },
             link: function (scope, element, attrs) {
+
+                console.log(scope.readOnly);
 
                 // declare private variables here
                 var allNotifs = [];
